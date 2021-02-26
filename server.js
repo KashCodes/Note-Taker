@@ -18,10 +18,39 @@ app.set('etag', false);
 //-----------------Middleware End-----------------//
 
 
+
+
+
+
+
+
+
+
+
+
 // route that the front-end can request data from
+// app.get('/db/db', (req, res) => {
+//   res.send('Hello!');
+// });
 app.get('/db/db', (req, res) => {
-  res.send('Hello!');
+  res.json(db);
 });
+
+// route that the front-end can requestand query data from
+app.get('/db/db', (req, res) => {
+  let results = db;
+  console.log(req.query)
+  res.json(results);
+});
+
+
+
+
+
+
+
+
+
 
 // listen for server
 app.listen(3005, () => {
