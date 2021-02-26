@@ -29,9 +29,6 @@ app.set('etag', false);
 
 
 // route that the front-end can request data from
-// app.get('/db/db', (req, res) => {
-//   res.send('Hello!');
-// });
 app.get('/db/db', (req, res) => {
   res.json(db);
 });
