@@ -51,5 +51,5 @@ app.get('/db/db', (req, res) => {
 
 // listen for server
 app.listen(PORT, () => {
-  console.log(`API server now on port 3005!`);
+  console.log(`API server now on port ${PORT}!`);
 });
