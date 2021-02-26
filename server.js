@@ -8,7 +8,7 @@ const app = express();
 // tell our app (heroku) to use that port, if it has been set, and if not, default to port 80.
 const PORT = process.env.PORT || 3005;
 
-const { db } = require('./db/db.json');
+const db = require('./db/db.json');
 
 //-----------------Middleware Start-----------------//
 const nocache = require("nocache");
