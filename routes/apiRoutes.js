@@ -1,6 +1,7 @@
 // Required module connections 
 const fs = require("fs")
 let notes = require("../db/db.json")
+// applies a unique id in the form of a random string of charachters.
 const { v4: uuidv4 } = require('uuid')
 
 module.exports = function(app) {
@@ -29,13 +30,19 @@ module.exports = function(app) {
 
   // after you save the note it posts notes to the list and applies id to it. 
   app.post("/api/notes", (req, res) => {
+    // For a newNote to be saved it must have a completed body
     const newNote = req.body
- 
+      // Assigning each newNote an ID using UUID
       newNote.id = uuidv4()
    
+    //pushes newNote to notes array.
     notes.push(newNote)
+    // jsonNotes = JSON stringified notes/proper json format. 
     let jsonNotes = JSON.stringify(notes)
-    fs.writeFile("./db/db.json", jsonNotes, function(err) {
+    // writes to db.json file, `jsonNotes` is parameter being written. 
+    fs.writeFile("./db/db.json", jsonNotes, 
+    // error function to catch errors and log it.
+    function(err) {
       if (err) {
         console.log(err)
       }
