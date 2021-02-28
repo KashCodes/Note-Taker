@@ -40,7 +40,7 @@
   > https://github.com/KashCodes/Note-Taker
 
 
-  ## Heroku Live Apllication Link: 
+  ## Heroku Live Application  Link: 
   > https://kashcodes-note-taker.herokuapp.com/
 
 
