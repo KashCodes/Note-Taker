@@ -27,6 +27,21 @@ module.exports = function(app) {
      res.json(false)
   })
 
-  
+  // after you save the note it posts notes to the list and applies id to it. 
+  app.post("/api/notes", (req, res) => {
+    const newNote = req.body
+ 
+      newNote.id = uuidv4()
+   
+    notes.push(newNote)
+    let jsonNotes = JSON.stringify(notes)
+    fs.writeFile("./db/db.json", jsonNotes, function(err) {
+      if (err) {
+        console.log(err)
+      }
+      console.log("Note saved to database.")
+    })
+    res.json(true)
+  })
 
 }
