@@ -51,4 +51,27 @@ module.exports = function(app) {
     res.json(true)
   })
 
+  // function created to delete the saved notes in the JSON db. 
+  app.delete("/api/notes/:id", (req, res) => {
+    // to be deleted the if must have req id. 
+    const id = req.params.id
+    // if a not is found
+    let found
+    // function will use filter to delete any id that matches. Determines this by verifying it is not equal to the params set in line 57. Uses falsy statement to only delete the matched id. 
+     notes =  notes.filter(note => note.id != id)
+ 
+        // stringifying notes
+        let jsonNotes = JSON.stringify(notes)
+        //writing to json file, or in this case deleting from json file. 
+        fs.writeFile("./db/db.json", jsonNotes,
+        // error function for error log
+        function(err) {
+          if (err) {
+            console.log(err)
+          }
+          console.log("The Note selected has been deleted.")
+        })
+    res.json(true)
+  })
+
 }
