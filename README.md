@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Javascript-yellow" />
     <img src="https://img.shields.io/badge/jQuery-orange" />
     <img src="https://img.shields.io/badge/-Node.js-green" />
-    <img src="https://img.shields.io/badge/-Heroku-purple" />
+    <img src="https://img.shields.io/badge/%E2%86%91_Deploy_to-Heroku-7056bf.svg?style=flat" />
     <img src="https://img.shields.io/badge/-ScreenCastify-red" />
     <img src="https://img.shields.io/badge/-JSON-orange"" />
   </p>
